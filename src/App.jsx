@@ -148,7 +148,7 @@ function App() {
         <FaLock className="text-teal-500" />
         Text Case Style
       </label>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
         {[
           { type: "normal", label: "Normal", example: "Normal" },
           { type: "upper", label: "UPPER", example: "UPPER" },
@@ -175,12 +175,12 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50">
         <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Section */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center">
             <div className="">
-              <div className="bg-teal-50 border-l-4 border-teal-400 p-4 mb-8 rounded">
+              <div className="bg-white border-l-4 border-teal-400 p-4 mb-8 rounded">
                 <div className="flex">
                   <div className="flex-shrink-0">
                     <svg
@@ -196,7 +196,7 @@ function App() {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm text-teal-700">
+                    <p className="font-medium text-teal-700">
                       Your security is our priority. All passwords are generated
                       locally in your browser. We never store, transmit, or
                       track your passwords.
@@ -205,22 +205,22 @@ function App() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-4 mt-4 mb-8">
-                <span className="px-4 py-2 bg-teal-50 text-teal-600 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 bg-white text-teal-600 rounded-full text-sm font-medium">
                   100% Secure
                 </span>
-                <span className="px-4 py-2 bg-teal-50 text-teal-600 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 bg-white text-teal-600 rounded-full text-sm font-medium">
                   Instant Generation
                 </span>
-                <span className="px-4 py-2 bg-teal-50 text-teal-600 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 bg-white text-teal-600 rounded-full text-sm font-medium">
                   Customizable
                 </span>
-                <span className="px-4 py-2 bg-teal-50 text-teal-600 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 bg-white text-teal-600 rounded-full text-sm font-medium">
                   No Storage
                 </span>
               </div>
 
               {/* Added Password Security Tips */}
-              <div className="mt-4  bg-white/90  rounded-xl">
+              <div className="mt-4  rounded-xl">
                 <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -283,12 +283,16 @@ function App() {
                         {copied ? (
                           <FaCheck className="text-green-500 text-xl" />
                         ) : (
-                          <FaCopy className="text-gray-600 text-xl hover:text-gray-800" />
+                          <FaCopy
+                            className="text-gray-600 text-xl hover:text-gray-800"
+                            title="Copy"
+                          />
                         )}
                       </button>
                       <button
                         onClick={generatePassword}
                         aria-label="Regenerate password"
+                        title="Regenerate Password "
                         className="p-2 rounded-lg hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500"
                       >
                         <FaRandom className="text-gray-600 text-xl hover:text-gray-800" />
@@ -341,14 +345,10 @@ function App() {
 
                 {/* Configuration Section */}
                 <div className="space-y-6">
-                  <h2 className="text-lg font-semibold text-gray-800 border-b border-gray-200 pb-2">
-                    Customize Your Password
-                  </h2>
-
                   {/* Word Input */}
                   <div className="space-y-2">
                     <label className="text-gray-700 font-medium">
-                      Base Word
+                      Password text to be included
                     </label>
                     <input
                       type="text"
